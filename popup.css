@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
+body {
+    height: 400px;
+    width: 400px;
+    overflow: scroll;
+    background: black;
+    color: white;
+    border-radius: 6px;
+    background-image: url('pattern.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Exo 2', monospace, sans-serif;
+}
+.appName {
+    color: white;
+    text-decoration: none;
+    font-size: 50px;
+}
+.appDescription {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+input {
+    width: 100%;
+    /* margin: 0 20px; */
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    background: black;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 0;
+    border: 1px solid grey;
+    font-family: 'Exo 2', monospace, sans-serif;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#result {
+    display: none;
+    justify-content: center;
+    padding: 50px;
+}
+.imageContainer {
+    width: 100px;
+    height: 75px;
+    object-fit: contain;
+    margin: 0 10px;
+    border: solid 1px orange;
+    border-radius: 4px;
+}
+.error {
+
+}
