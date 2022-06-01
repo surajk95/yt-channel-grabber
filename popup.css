@@ -52,6 +52,11 @@ a{
     display: none;
     justify-content: center;
     padding: 50px;
+    position: relative;
+}
+.instructions {
+    position: absolute;
+    top: 15px;
 }
 .imageContainer {
     width: 100px;
@@ -61,6 +66,18 @@ a{
     border: solid 1px orange;
     border-radius: 4px;
 }
+.imageParent>div {
+    text-align: center;
+}
 .error {
 
+}
+.attribution {
+    color: white;
+    font-size: 10px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
 }
