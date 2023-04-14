@@ -15,10 +15,9 @@
         {
           "js": ["content.js"],
           "matches": [
-            "https://youtube.com/*",
-            "https://developer.chrome.com/*"
+            "https://*/*"
           ]
         }
     ],
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab", "clipboardWrite"]
   }
