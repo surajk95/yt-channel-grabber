@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400&display=swap');
 body {
     height: 400px;
     width: 400px;
@@ -48,29 +48,18 @@ a{
     text-decoration: none;
     color: white;
 }
-#result {
-    display: none;
+#message {
+    display: block;
     justify-content: center;
-    padding: 50px;
+    margin: 20px 10px;
     position: relative;
+    font-size: 16px;
 }
-.instructions {
-    position: absolute;
-    top: 15px;
+#message.success {
+    color: rgb(18, 253, 18);
 }
-.imageContainer {
-    width: 100px;
-    height: 75px;
-    object-fit: contain;
-    margin: 0 10px;
-    border: solid 1px orange;
-    border-radius: 4px;
-}
-.imageParent>div {
-    text-align: center;
-}
-.error {
-
+#message.error {
+    color: red;
 }
 .attribution {
     color: white;
@@ -80,4 +69,7 @@ a{
     right: 5px;
     letter-spacing: 6px;
     text-transform: uppercase;
+}
+#start {
+    display: none;
 }
