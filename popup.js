@@ -89,6 +89,7 @@ chrome.runtime.onMessage.addListener(
                   "from the extension");
         if(request.message==='scroll complete') {
             console.log('finished scroll!')
+            toggleCapture()
         }
         else if(request.message==='channel_data') {
             console.log(`received data`, request.data)

@@ -27,9 +27,9 @@ function scrollToBottom(oldHeight) {
     if(newHeight===oldHeight) {
         //send message for next step
         console.log(`cannot scroll further`, oldHeight, newHeight)
+        // stopScrolling()
         sendMessage(`scroll complete`)
-        grabData()
-        
+        // grabData()
     }
     else {
         console.log(`will scroll again`)
