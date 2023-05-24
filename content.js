@@ -2,7 +2,6 @@ let timeout = 3000, timeoutId = null
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-        console.log(`new message iin content.js`, sender, request)
         if(request.message==='get_url') {
             sendResponse({message: window.location.href})
         }
@@ -20,31 +19,24 @@ chrome.runtime.onMessage.addListener(
 );
 
 function scrollToBottom(oldHeight) {
-    console.log(`trying to scroll`, timeoutId, oldHeight)
     window.scrollTo(0, document.querySelector("#content").scrollHeight)
     const newHeight = document.querySelector("#content").scrollHeight
 
     if(newHeight===oldHeight) {
         //send message for next step
-        console.log(`cannot scroll further`, oldHeight, newHeight)
-        // stopScrolling()
         sendMessage(`scroll complete`)
-        // grabData()
     }
     else {
-        console.log(`will scroll again`)
         timeoutId = setTimeout(()=>scrollToBottom(newHeight), timeout)
     }
 }
 
 function stopScrolling() {
-    console.log(`stopping`, timeoutId)
     clearTimeout(timeoutId)
 }
 
 function grabData() {
     const data = processPage()
-    console.log(`grabbing data from channel`, data)
     sendMessage(`channel_data`, data)
 }
 
