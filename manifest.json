@@ -1,5 +1,5 @@
 {
-    "name": "yt channel grabber",
+    "name": "youtube channel grabber",
     "description": "Grab video details from all videos from a Youtube channel",
     "version": "1.0",
     "manifest_version": 3,
