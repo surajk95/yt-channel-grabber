@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="popup.css">
-  </head>
-  <body>
-    <a href="http://surajk95.github.io/">
-        <div class="appName">YCG</div>
-        <div class="appDescription">YOUTUBE CHANNEL GRABBER</div>
-    </a>
-    <div id="message"></div>
-    <button id="start">Start</button>
-    <a class="attribution" href="https://fvrtrp.github.io/" target="_black" title="attribution">fvrtrp</a>
-    <div id="error"></div>
-    <script src="popup.js"></script>
-  </body>
+
+<head>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <a href="http://surajk95.github.io/">
+    <div class="appName">YCG</div>
+    <div class="appDescription">YOUTUBE CHANNEL GRABBER</div>
+  </a>
+  <div id="message"></div>
+  <div class="inputContainer">
+    <span>Timeout for scroll:</span>
+    <input id="timeoutInput" type="text" placeholder="3000" />
+    <span>ms</span>
+    <button id="updateTimeout">set</button>
+  </div>
+  <button id="start">Start</button>
+  <a class="attribution" href="https://surajk95.github.io/" target="_black" title="attribution">ABOUT</a>
+  <div id="error"></div>
+  <script src="popup.js"></script>
+</body>
+
 </html>

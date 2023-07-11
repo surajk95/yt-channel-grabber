@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400&display=swap');
+
 body {
     height: 400px;
     width: 400px;
@@ -11,15 +12,43 @@ body {
     background-repeat: no-repeat;
     font-family: 'Exo 2', monospace, sans-serif;
 }
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: rgb(40, 255, 40);
+    color: black;
+    padding: 5px 8px;
+    text-transform: uppercase;
+    font-family: 'Exo 2', monospace, sans-serif;
+}
+
 .appName {
     color: white;
     text-decoration: none;
     font-size: 50px;
 }
+
 .appDescription {
     font-size: 20px;
     margin-bottom: 50px;
 }
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    margin: 0 0 25px 0;
+}
+
+.inputContainer>* {
+    margin: 0 5px;
+}
+
+.inputContainer input {
+    width: 100px;
+}
+
 input {
     width: 100%;
     /* margin: 0 20px; */
@@ -34,20 +63,29 @@ input {
     border: 1px solid grey;
     font-family: 'Exo 2', monospace, sans-serif;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #fff;
-    opacity: 1; /* Firefox */
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #b9b9b9;
+    opacity: 1;
+    /* Firefox */
 }
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
     color: #fff;
 }
-::-ms-input-placeholder { /* Microsoft Edge */
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
     color: #fff;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
 }
+
 #message {
     display: block;
     justify-content: center;
@@ -55,21 +93,25 @@ a{
     position: relative;
     font-size: 16px;
 }
+
 #message.success {
     color: rgb(18, 253, 18);
 }
+
 #message.error {
     color: red;
 }
+
 .attribution {
     color: white;
-    font-size: 10px;
+    font-size: 6px;
     position: fixed;
     bottom: 5px;
-    right: 5px;
-    letter-spacing: 6px;
+    right: 15px;
+    letter-spacing: 4px;
     text-transform: uppercase;
 }
+
 #start {
     display: none;
 }
