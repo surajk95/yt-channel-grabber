@@ -11,6 +11,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Exo 2', monospace, sans-serif;
+    font-size: 12px;
 }
 
 button {
@@ -27,11 +28,11 @@ button {
 .appName {
     color: white;
     text-decoration: none;
-    font-size: 50px;
+    font-size: 20px;
 }
 
 .appDescription {
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 50px;
 }
 
@@ -58,7 +59,7 @@ input {
     background: black;
     color: #fff;
     font-size: 14px;
-    padding: 10px 20px;
+    padding: 5px;
     border-radius: 0;
     border: 1px solid grey;
     font-family: 'Exo 2', monospace, sans-serif;

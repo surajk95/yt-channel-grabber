@@ -19,7 +19,7 @@ async function checkUrlValidity() {
         const url = response.message
         if (url.match(/https:\/\/www\.youtube.com\/.+\/videos/)) {
             show({
-                message: `valid youtube channel url`
+                message: `You're on a valid youtube channel url`
             })
             //show start button
             document.querySelector('#start').style.display = 'initial'
@@ -27,13 +27,13 @@ async function checkUrlValidity() {
         }
         else {
             show({
-                message: `Not a valid url. Go to the Videos tab on a youtube channel`,
+                message: `Go to the Videos tab on a youtube channel to get started.`,
                 type: 'error'
             })
         }
     } catch (e) {
         show({
-            message: `Not a valid url. Go to the Videos tab on a youtube channel`,
+            message: `Go to the Videos tab on a youtube channel to get started.`,
             type: 'error'
         })
     }
@@ -114,6 +114,7 @@ chrome.runtime.onMessage.addListener(
         // console.log(`new message:`, request, sender.tab ?
         //           "from a content script:" + sender.tab.url :
         //           "from the extension");
+        console.log(`zzz mesg`, request)
         if (request.message === 'scroll complete') {
             toggleCapture()
         }
@@ -123,7 +124,13 @@ chrome.runtime.onMessage.addListener(
             })
             navigator.clipboard.writeText(JSON.stringify(request.data))
         }
-        if (request.message === "hello")
+        else if (request.message === "hello")
             sendResponse({ farewell: "goodbye" });
+        else {
+            show({
+                message: request.message,
+                type: 'error',
+            })
+        }
     }
 )
