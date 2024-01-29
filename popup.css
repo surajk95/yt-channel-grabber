@@ -7,7 +7,6 @@ body {
     background: black;
     color: white;
     border-radius: 6px;
-    background-image: url('pattern.svg');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Exo 2', monospace, sans-serif;
