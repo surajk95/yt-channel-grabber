@@ -1,8 +1,10 @@
 let TIMEOUT = 3000
 let capturing = false
+let channelData = ''
 
 const urlPattern = /youtube\.com.+videos/
 let startButton = document.querySelector("#start")
+let copyButton = document.querySelector('#copy')
 const resultContainer = document.querySelector("#result")
 const errorContainer = document.querySelector("#error")
 const timeoutInput = document.querySelector('#timeoutInput')
@@ -22,12 +24,15 @@ async function checkUrlValidity() {
                 message: `You're on a valid youtube channel url`
             })
             //show start button
-            document.querySelector('#start').style.display = 'initial'
+            startButton.style.display = 'initial'
             startButton.addEventListener('click', (event) => { toggleCapture() })
+            //hide copy button
+            copyButton.style.display = 'none'
+            copyButton.addEventListener('click', (event) => { copyToClipboard() })
         }
         else {
             show({
-                message: `Go to the Videos tab on a youtube channel to get started.`,
+                message: `Go to the Videos tab on a youtube channel to get started. Refresh the page if you're already on Videos tab, but Start button isn't showing up.`,
                 type: 'error'
             })
         }
@@ -64,10 +69,12 @@ function show(payload) {
 function toggleCapture() {
     if (!capturing) {
         startButton.innerText = 'Stop'
+        copyButton.style.display = 'none'
         startCapture()
     }
     else {
         startButton.innerText = 'Start'
+        copyButton.style.display = 'initial'
         stopCapture()
     }
     capturing = !capturing
@@ -108,29 +115,34 @@ async function updateTimeout() {
     }
 }
 
+function copyToClipboard() {
+    navigator.clipboard.writeText(channelData)
+    show({
+        message: 'Data copied to clipboard', type: 'success'
+    })
+}
+
 //listeners
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         // console.log(`new message:`, request, sender.tab ?
         //           "from a content script:" + sender.tab.url :
         //           "from the extension");
-        console.log(`zzz mesg`, request)
         if (request.message === 'scroll complete') {
             toggleCapture()
         }
         else if (request.message === 'channel_data') {
-            show({
-                message: 'Data copied to clipboard', type: 'success'
-            })
-            navigator.clipboard.writeText(JSON.stringify(request.data))
+            channelData = JSON.stringify(request.data)
+            copyToClipboard()
         }
         else if (request.message === "hello")
             sendResponse({ farewell: "goodbye" });
         else {
             show({
-                message: request.message,
+                message: 'An error occured. If this keeps happening, please report to fvrtrp@gmail.com',
                 type: 'error',
             })
+            return
         }
     }
 )

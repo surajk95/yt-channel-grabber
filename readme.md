@@ -14,8 +14,8 @@ Data from the page will be saved to the clipboard as an object.
 
 There's a lot of work to be done, like:
 
-- [ ] Structuring the length of videos-it's word format currently like 53 minutes 23 seconds
-- [ ] Date uploaded: comes as ["4", "days"]. Need to convert to standard date based on the current date.
-- [ ] Error handling (the try-catch in content.js doesn't work)
+- [ ] Extracting more data from the page
+- [ ] Better ux/flow
+- [ ] Error handling
 
-Feel free to raise a Pull request for that.
+Feel free to raise a Pull request.

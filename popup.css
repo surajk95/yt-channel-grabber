@@ -15,8 +15,6 @@ body {
 }
 
 button {
-    outline: none;
-    border: none;
     cursor: pointer;
     background: rgb(40, 255, 40);
     color: black;
@@ -113,6 +111,6 @@ a {
     text-transform: uppercase;
 }
 
-#start {
+#start, #copy {
     display: none;
 }
