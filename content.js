@@ -57,7 +57,7 @@ function processPage() {
         title: i.getAttribute('aria-label').match(/(.+)\sby/)[1],
         date: getDate(i.getAttribute('aria-label').match(/(\d+)\s(\w+)\sago/).slice(1, 3)),
         duration: getDuration(i.getAttribute('aria-label').match(/ago\s(.+)/)[1]),
-        views: parseInt(i.getAttribute('aria-label').match(/([0-9.,]+)\sviews/)[1].replace(',', ''))
+        views: parseInt(i.getAttribute('aria-label').match(/([0-9.,]+)\sviews/)[1].replaceAll(',', ''))
     }})
     const channel_name = document.querySelector('#meta').querySelector('#text').innerText
     const channel_handle = document.querySelector('#meta').querySelector('#channel-handle').innerText
@@ -135,7 +135,7 @@ const getDate = (date) => {
     let result = 0
     for (let i = 0; i < duration.length; i++) {
       const time = duration[i].split(' ')
-      const quantity = time[0]
+      const quantity = parseInt(time[0])
       const unit = time[1]
       switch(unit) {
         case 'second':
@@ -155,6 +155,6 @@ const getDate = (date) => {
         }
       }
     }
-    return result
+    return parseInt(result)
   }
   
